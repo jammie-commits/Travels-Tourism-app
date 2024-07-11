@@ -11,29 +11,41 @@ export default function Navbar() {
         <>
             <StyledNav>
                 <Brand>
-                <LogoContainer>
-                    <img src={logo} alt='Logo' />
-                    Tourism & Travel
+                    <LogoContainer>
+                        <img src={logo} alt='Logo' />
+                        Tourism & Travel
                     </LogoContainer>
                     <ToggleIcon>
                         {navbarState ? (
-                            <VscChromeclose onclick={() => setVavbarState(false)} />
+                            <VscChromeClose onClick={() => setNavbarState(false)} />
                         ) : (
-                            <GiHamburgerMenu onclick={() => setVavbarState(true)} />
-
+                            <GiHamburgerMenu onClick={() => setNavbarState(true)} />
                         )}
-                        
                     </ToggleIcon>
-                    </Brand>
+                </Brand>
                 <NavLinks>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#aboutus">About Us</a></li>
-                    <li><a href="#destinations">Destinations</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#footer">Contact Us</a></li>
+                    <li><a href='#home'>Home</a></li>
+                    <li><a href='#aboutus'>AboutUs</a></li>
+                    <li><a href='#destinations'>Destinations</a></li>
+                    <li><a href='#reviews'>Reviews</a></li>
+                    <li><a href='#footer'>ContactUs</a></li>
                 </NavLinks>
-
-                
+                <ButtonGroup>
+                    <LoginButton>Login</LoginButton>
+                    <SignupButton>Signup</SignupButton>
+                </ButtonGroup>
             </StyledNav>
+            <MobileNav state={navbarState}>
+                <ul>
+                    <li><a href='#home' onClick={() => setNavbarState(false)}>Home</a></li>
+                    <li><a href='#aboutus' onClick={() => setNavbarState(false)}>AboutUs</a></li>
+                    <li><a href='#destinations' onClick={() => setNavbarState(false)}>Destinations</a></li>
+                    <li><a href='#reviews' onClick={() => setNavbarState(false)}>Reviews</a></li>
+                    <li><a href='#footer' onClick={() => setNavbarState(false)}>ContactUs</a></li>
+                </ul>
+            </MobileNav>
+        </>
+    );
+}
 
            
