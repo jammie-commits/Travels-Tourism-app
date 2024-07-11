@@ -48,4 +48,11 @@ export default function Navbar() {
     );
 }
 
-           
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 1rem;
+
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    display: none;
+  }
+`;          
