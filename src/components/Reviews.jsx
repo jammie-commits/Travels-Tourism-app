@@ -27,10 +27,10 @@ export default function Reviews() {
 }
 
 const reviews = [
-    { text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.", name: "James Mbugua", role: "Developer - z-Gen coders" },
-    { text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.", name: "Lonarh Munene", role: "Developer - z-Gen coders" },
-    { text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.", name: "Deborah Muoti", role: "Developer - z-Gen coders" },
-    { text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.", name: "Doc Obura", role: "Developer - z-Gen coders" }
+    { text: "Absolutely fantastic experience!Also, a great way to experience the local culture.", name: "James Mbugua", role: "Developer - z-Gen coders" },
+    { text: "Great experience!Can't recommend it enough.", name: "Lonarh Munene", role: "Developer - z-Gen coders" },
+    { text: "An unforgettable experience.Worth every penny.", name: "Deborah Muoti", role: "Developer - z-Gen coders" },
+    { text: "Highly recommend this to anyone visiting the area.", name: "Doc Obura", role: "Developer - z-Gen coders" }
 ];
 
 const StyledSection = styled.section`
