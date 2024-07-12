@@ -3,9 +3,18 @@ import styled from 'styled-components';
 import logo from '../assets/logo.png';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
+import  LoginForm from './LoginForm';
+import  SignupForm  from './SignupForm';
 
 export default function Navbar() {
     const [navbarState, setNavbarState] = useState(false);
+    const [showLoginForm, setShowLoginForm] = useState(false);
+    const [showSignupForm, setShowSignupForm] = useState(false);
+
+    const closeForms = () => {
+        setShowLoginForm(false);
+        setShowSignupForm(false);
+    };
 
     return (
         <>
@@ -31,8 +40,8 @@ export default function Navbar() {
                     <li><a href='#footer'>ContactUs</a></li>
                 </NavLinks>
                 <ButtonGroup>
-                    <LoginButton>Login</LoginButton>
-                    <SignupButton>Signup</SignupButton>
+                    <LoginButton onClick={() => setShowLoginForm(true)}>Login</LoginButton>
+                    <SignupButton onClick={() => setShowSignupForm(true)}>Signup</SignupButton>
                 </ButtonGroup>
             </StyledNav>
             <MobileNav state={navbarState}>
@@ -44,9 +53,13 @@ export default function Navbar() {
                     <li><a href='#footer' onClick={() => setNavbarState(false)}>ContactUs</a></li>
                 </ul>
             </MobileNav>
+            {showLoginForm && <LoginForm closeForm={closeForms} />}
+            {showSignupForm && <SignupForm closeForm={closeForms} />}
         </>
     );
 }
+
+
 
 const StyledNav = styled.nav`
   display: flex;
