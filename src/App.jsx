@@ -1,12 +1,7 @@
 import React, { useEffect } from 'react';
-import AboutUs from './components/AboutUs';
-import Destinations from './components/Destinations';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
 import Navbar from './components/Navbar';
-import Reviews from './components/Reviews';
 import ScrollToTop from './components/ScrollToTop';
-import ScrollReveal from 'scrollreveal'; // Corrected import
+import ScrollReveal from 'scrollreveal';
 
 export default function App() {
   useEffect(() => {
@@ -35,11 +30,7 @@ export default function App() {
     <>
       <ScrollToTop />
       <Navbar />
-      <Hero />
-      <AboutUs />
-      <Destinations />
-      <Reviews />
-      <Footer />
+   
     </>
   );
 }
