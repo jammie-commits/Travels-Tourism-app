@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import avatarImage from "../assets/avatarImage.jpg";
-
+import avatarImage from "../assets/avatarImage1.jpg";
+import avatarImage2 from "../assets/avatarimage2.jpg"
 export default function Reviews() {
     return (
         <StyledSection id="reviews">
@@ -13,7 +13,7 @@ export default function Reviews() {
                     <Review key={index}>
                         <p>{review.text}</p>
                         <Info>
-                            <img src={avatarImage} alt={review.name} />
+                            <img src={avatarImage2} alt={review.name} />
                             <Details>
                                 <h4>{review.name}</h4>
                                 <span>{review.role}</span>
@@ -27,10 +27,10 @@ export default function Reviews() {
 }
 
 const reviews = [
-    { text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.", name: "James Mbugua", role: "Developer - z-Gen coders" },
-    { text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.", name: "Lonarh Munene", role: "Developer - z-Gen coders" },
-    { text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.", name: "Deborah Muoti", role: "Developer - z-Gen coders" },
-    { text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque.", name: "Doc Obura", role: "Developer - z-Gen coders" }
+    { text: "Absolutely fantastic experience!Also, a great way to experience the local culture.", name: "James Mbugua", role: "Developer - z-Gen coders" },
+    { text: "Great experience!Can't recommend it enough.", name: "Sheldon Cooper", role: "Tourist" },
+    { text: "An unforgettable experience.Worth every penny.", name: "Deborah Muoti", role: "Developer - z-Gen coders" },
+    { text: "Highly recommend this to anyone visiting the area.", name: "Doc Obura", role: "Developer - z-Gen coders" }
 ];
 
 const StyledSection = styled.section`
