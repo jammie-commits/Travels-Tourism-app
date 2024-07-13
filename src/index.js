@@ -49,6 +49,4 @@ root.render(
        <Navbar />
     <RouterProvider router={router} />
       </React.StrictMode>
-);
-
-
+)
