@@ -22,14 +22,14 @@ export default function ScrollToTop() {
     }, []);
 
     return (
-        <StyledToTop onClick={toTop} scrollState={scrollState}>
+        <StyledToTop onClick={toTop} $show={scrollState}>
             <img src={logo} alt="Scroll to top" />
         </StyledToTop>
     );
 }
 
 const StyledToTop = styled.div`
-  display: ${({ scrollState }) => (scrollState ? "block" : "none")};
+  display: ${({ $show }) => ($show ? "block" : "none")};
   position: fixed;
   cursor: pointer;
   z-index: 10;
