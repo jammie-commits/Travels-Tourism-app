@@ -35,12 +35,11 @@ export default function Navbar() {
           <li><Link to="/destinations">Destinations</Link></li>
           <li><Link to="/reviews">Reviews</Link></li>
           <li><Link to="/users">Users</Link></li>
-          <li><Link to="/trips">Trips</Link></li>
+          <li><Link to="/trips">BookTrips</Link></li>
+          <li><Link to="/viewtrips">ViewTrips</Link></li>
         </NavLinks>
       </StyledNav>
 
-      {showLoginForm && <LoginForm closeForm={closeForms} />}
-      {showSignupForm && <SignupForm closeForm={closeForms} />}
     </>
   );
 }

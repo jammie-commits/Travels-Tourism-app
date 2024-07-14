@@ -13,6 +13,7 @@ import Destinations from "./pages/destinations";
 import Reviews from "./pages/reviews";
 import LoginForm from "./pages/Login";
 import PlannedTrips from "./pages/trips";
+import ViewTrips from "./pages/viewtrips";
 
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/users" element={<Users />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/trips" element={<PlannedTrips />} />
+        <Route path="/viewtrips" element={<ViewTrips />} />
         <Route
           path="/destinations"
           element={<Destinations />}
