@@ -22,6 +22,16 @@ export default function ViewTrips() {
         fetchData();
     }, []);
 
+    const handleDeleteTrip = (id) => {
+        const updatedTrips = bookedTrips.filter(trip => trip.id !== id);
+        setBookedTrips(updatedTrips);
+        // add code here to delete the trip from the server using an API call
+    };
+
+    const handleEditTrip = (id) => {
+        alert(`Edit trip with ID ${id}`);
+    };
+
     return (
         <TripSection id="trips">
             <Background>
@@ -39,6 +49,8 @@ export default function ViewTrips() {
                                 <p><strong>Destination:</strong> {trip.destination}</p>
                                 <p><strong>Start Date:</strong> {trip.startDate}</p>
                                 <p><strong>End Date:</strong> {trip.endDate}</p>
+                                <Button onClick={() => handleDeleteTrip(trip.id)}>Delete</Button>
+                                <Button onClick={() => handleEditTrip(trip.id)}>Edit</Button>
                             </TripItem>
                         ))}
                     </TripList>
@@ -90,47 +102,6 @@ const Title = styled.div`
     }
 `;
 
-const Search = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 10px;
-`;
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-
-    label {
-        margin-bottom: 0.5rem;
-        color: #333;
-    }
-
-    input {
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 1rem;
-    }
-`;
-
-const Button = styled.button`
-    padding: 0.75rem 1.5rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-
-    &:hover {
-        background-color: #0056b3;
-    }
-`;
-
 const BookedTrips = styled.div`
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
@@ -150,8 +121,20 @@ const TripItem = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     padding: 1rem;
     border-radius: 5px;
+    position: relative;
+`;
 
-    p {
-        margin: 0.5rem 0;
+const Button = styled.button`
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+
+    &:hover {
+        background-color: #0056b3;
     }
 `;
