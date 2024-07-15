@@ -3,6 +3,12 @@ import styled from "styled-components";
 
 const Destinations = () => {
   const [destinations, setDestinations] = useState([]);
+  const [newDestination, setNewDestination] = useState({
+    name: '',
+    description: '',
+    image_url: '',
+    location: ''
+  });
 
   useEffect(() => {
     fetch('http://127.0.0.1:5555/destinations')
@@ -19,10 +25,65 @@ const Destinations = () => {
       .catch(error => console.error('Error fetching destinations:', error));
   }, []);
 
+  const handleAddDestination = () => {
+    //  backend endpoint for adding destinations
+    fetch('http://127.0.0.1:5555/destinations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newDestination),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Successfully added destination:', data);
+        // Update new destination 
+        setDestinations([...destinations, data]);
+        setNewDestination({
+          name: '',
+          description: '',
+          image_url: '',
+          location: ''
+        });
+      })
+      .catch(error => console.error('Error adding destination:', error));
+  };
+
+  const handleDeleteDestination = (id) => {
+    //  backend endpoint for deleting destinations
+    fetch(`http://127.0.0.1:5555/destinations/${id}`, {
+      method: 'DELETE',
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('Successfully deleted destination');
+          // filtering out the deleted destination
+          const updatedDestinations = destinations.filter(dest => dest.id !== id);
+          setDestinations(updatedDestinations);
+        } else {
+          throw new Error('Failed to delete destination');
+        }
+      })
+      .catch(error => console.error('Error deleting destination:', error));
+  };
+
+  const handleEditDestination = (id) => {
+    //  edit functionality
+    alert(`Edit destination with ID ${id}`);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewDestination({
+      ...newDestination,
+      [name]: value
+    });
+  };
+
   return (
-    <section id="destinations">
+    <Section id="destinations">
       <div className='title'>
-      <h1>Destinations</h1>
+        <h1>Available Destinations</h1>
       </div>
       <DestinationsGrid>
         {destinations.map(destination => (
@@ -31,18 +92,38 @@ const Destinations = () => {
             <p>{destination.description}</p>
             <img src={destination.image_url} alt={destination.name} />
             <p>Location: {destination.location}</p>
+            <Button onClick={() => handleDeleteDestination(destination.id)}>Delete</Button>
+            <Button onClick={() => handleEditDestination(destination.id)}>Edit</Button>
           </DestinationCard>
-
         ))}
-        </DestinationsGrid>
-      </section>
+      </DestinationsGrid>
+
+      {/* Form for adding new destination */}
+      <AddDestinationForm>
+        <h2>Add New Destination</h2>
+        <InputContainer>
+          <label>Name:</label>
+          <input type="text" name="name" value={newDestination.name} onChange={handleChange} />
+        </InputContainer>
+        <InputContainer>
+          <label>Description:</label>
+          <input type="text" name="description" value={newDestination.description} onChange={handleChange} />
+        </InputContainer>
+        <InputContainer>
+          <label>Image URL:</label>
+          <input type="text" name="image_url" value={newDestination.image_url} onChange={handleChange} />
+        </InputContainer>
+        <InputContainer>
+          <label>Location:</label>
+          <input type="text" name="location" value={newDestination.location} onChange={handleChange} />
+        </InputContainer>
+        <Button onClick={handleAddDestination}>Add Destination</Button>
+      </AddDestinationForm>
+    </Section>
   );
 };
-      
-  
 
 export default Destinations;
-
 
 const Section = styled.section`
   padding: 2rem 0;
@@ -82,8 +163,49 @@ const DestinationCard = styled.div`
   }
 `;
 
-const Info = styled.div`
+const AddDestinationForm = styled.div`
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+`;
+
+const InputContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+
+  input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+`;
+
+const Button = styled.button`
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #0056b3;
+  }
 `;
