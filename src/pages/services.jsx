@@ -5,7 +5,7 @@ import service2 from '../assets/service2.png';
 import service3 from '../assets/service3.png';
 import service4 from '../assets/service4.png';
 
-export default function AboutUs() {
+export default function Services() {
     const data = [
         {
             icon: service1,
@@ -30,15 +30,15 @@ export default function AboutUs() {
     ];
 
     return (
-        <Section id="aboutus">
+        <Section id="services">
             {data.map(({ icon, title, subTitle }, index) => (
-                <AboutItem key={index}>
+                <ServiceItem key={index}>
                     <Icon>
                         <img src={icon} alt="" />
                     </Icon>
                     <h3>{title}</h3>
                     <p>{subTitle}</p>
-                </AboutItem>
+                </ServiceItem>
             ))}
         </Section>
     );
@@ -59,7 +59,7 @@ const Section = styled.section`
   }
 `;
 
-const AboutItem = styled.div`
+const ServiceItem = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
