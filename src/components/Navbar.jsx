@@ -1,21 +1,15 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import LoginForm from "../pages/Login";
-import SignupForm from "../pages/signup";
+
 
 export default function Navbar() {
   const [navbarState, setNavbarState] = useState(false);
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showSignupForm, setShowSignupForm] = useState(false);
+ 
 
-  const closeForms = useCallback(() => {
-    setShowLoginForm(false);
-    setShowSignupForm(false);
-  }, []);
 
   return (
     <>
@@ -35,7 +29,7 @@ export default function Navbar() {
           <li><Link to="/destinations">Destinations</Link></li>
           <li><Link to="/reviews">Reviews</Link></li>
           <li><Link to="/users">Users</Link></li>
-          <li><Link to="/trips">BookTrips</Link></li>
+          <li><Link to="/trips">BookTrip</Link></li>
           <li><Link to="/viewtrips">ViewTrips</Link></li>
         </NavLinks>
       </StyledNav>

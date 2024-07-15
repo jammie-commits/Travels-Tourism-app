@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
+// import homeImage from "../assets/hero.png";
+
 
 const Destinations = () => {
   const [destinations, setDestinations] = useState([]);
@@ -82,6 +84,9 @@ const Destinations = () => {
 
   return (
     <Section id="destinations">
+      {/* <Background>
+        <img src={homeImage} alt="Background" />
+      </Background> */}
       <div className='title'>
         <h1>Available Destinations</h1>
       </div>
@@ -209,3 +214,19 @@ const Button = styled.button`
     background-color: #0056b3;
   }
 `;
+
+// const Background = styled.div`
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   overflow: hidden;
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     filter: brightness(0.7);
+//   }
+// `;
