@@ -1,18 +1,18 @@
-# TRAVEL AND TOURISM APP FRONT-END
+# TRAVEL AND TOURISM APP 
 ### Date:2024/07/17
 #### By *James Mbugua, Munene Lornah*
 ## Description 
 This app is centered to cater for a travel and tourism agency.It allows the user to add various destinations to their company,add new customers(users)and add new trips for the customers(users)once they plan for them.
 ## Key features
 
-# User Authentication:
+## User Authentication:
 Our app allows the user to safely signup and login in order to get this awesome experience
-# Wide variety of Destinations
+## Wide variety of Destinations
 for our users we've decided to toss out the idea of a lousy experience by giving the user a chance to choose from a wide variety of destinations.
 
-# Trip arrangement
+## Trip arrangement
 Our app also alows the user to plan for a designated trip at their convenience.
-# A user-friendly interface
+## A user-friendly interface
 The app has an amazing Navbar and Dashboard which guides the user on different pages of the app
 
 ## How the app works
@@ -77,6 +77,11 @@ James Mbugua :[james.mbugua@student.moringaschool.com]
 ## License
 MIT License
 Copyright (c)2024 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
